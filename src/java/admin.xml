@@ -1,0 +1,157 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: nikhil -->
+ 
+<struts>
+    <package name="admin_default" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor class="Interceptors.LoginInterceptor" name="loginInterceptor">
+            </interceptor>
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <action name="admin_login1" class="ActionClasses.LoginAction">
+            <result name="success">/AdminModule/FrontPage/AdminPage.jsp</result>
+            <result name="error">/LoginPage/login.jsp</result>
+            <result name="input">/LoginPage/login.jsp</result>
+        </action>
+        <action name="adminAction" >
+            <result >/AdminModule/FrontPage/AdminPage.jsp</result>
+        </action>
+        <action name="admin_display" class="ActionClasses.DisplayRecords">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ProfilePages/ViewProfile.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_edit" class="ActionClasses.DisplayRecords">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ProfilePages/EditProfile.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_logout" >
+            <result >/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_exams">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/FrontPage.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_courses">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/CoursePage/coursefront.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_userlist" class="ActionClasses.DisplayUsers" method="display">
+            <interceptor-ref name="loginStack" />
+            <result name="none">/AdminModule/users.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="EditAdminProfile" class="ActionClasses.EditAdmin">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/FrontPage/AdminPage.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_dispexam" class="ActionClasses.DisplayExams">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/viewexams.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="addexamaction">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/addexams.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="addexam" class="ActionClasses.AddExam">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/addexams.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="editexam" class="ActionClasses.DisplayExams">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/editexamfront.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="addquesaction" class="ActionClasses.AddQuestions">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/addquestions.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+         <action name="deletequesaction1" class="ActionClasses.DisplayExams">
+             <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/deletequestions1.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="examlist" class="ActionClasses.RemoveExams" method="display">
+            <interceptor-ref name="loginStack" />
+            <result name="none">/AdminModule/ExamsPage/removeexams.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="removeexams" class="ActionClasses.RemoveExams">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/FrontPage.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="viewres" class="ActionClasses.DisplayExams">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/viewresult1.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="viewresult" class="ActionClasses.ViewResult">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/viewresult2.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="viewcourse" class="ActionClasses.ViewCourses">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/CoursePage/viewcourses.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="addcourseaction">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/CoursePage/addcourse.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="addcourse" class="ActionClasses.AddCourse">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/CoursePage/addcourse.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="courselist" class="ActionClasses.RemoveCourses" method="display">
+            <interceptor-ref name="loginStack" />
+            <result name="none">/AdminModule/CoursePage/removecourse.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="removecourses" class="ActionClasses.RemoveCourses">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/CoursePage/coursefront.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="admin_userdetails" class="ActionClasses.DisplayUsers">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/userdetails.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="viewexamdetails" class="ActionClasses.ViewExamDetails">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/viewexamdetails.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="deletequesaction2" class="ActionClasses.ViewExamDetails">
+            <interceptor-ref name="loginStack" />
+            <result name="success">/AdminModule/ExamsPage/deletequestions2.jsp</result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+        <action name="deletequestion" class="ActionClasses.DeleteQuestion">
+            <interceptor-ref name="loginStack" />
+            <result name="success" type="redirectAction">
+                <param name="actionName">deletequesaction2</param>
+                <param name="subject">${subject}</param>
+            </result>
+            <result name="login">/LoginPage/login.jsp</result>
+        </action>
+    </package>
+</struts>

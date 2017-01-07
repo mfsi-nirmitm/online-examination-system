@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 Jun, 2016, 6:29:37 PM
+    Author     : NIKHIL
+*/
+
+body {
+        display: block;
+        width: 74%;
+        margin: 0px auto;
+        background-image: url("/OES/AdminModule/FrontPage/admin page background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 74% 100%;
+    }
+
+ header {
+            font-size: x-large;
+            display: block;
+            background: linear-gradient(to right bottom,rgba(102,102,255,0),rgba(102,140,255,1));
+            color: black;
+            text-align: center;
+            text-shadow: rgb(110,110,110) 3px 3px 5px;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+        
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    ul li:last-child {
+        float: right;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 10px 12px;
+        text-decoration: none;
+    }
+    
+    li a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+    }
+    
+    li.dropdown {
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+        background: #f1f1f1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+       display: block;
+    }
+    
+    p {
+        display: block;
+        padding: 5px;
+        margin-top: 0px;
+        background: #ffcc66;
+    }
+
+h2 {
+    margin-top: 5px;
+    text-align: center;
+    background: #009999;
+    padding: 10px;
+}
+
+section {
+    margin-top: 30px;
+    text-align: center;
+    display: block;
+    background: rgba(255,255,255,0.1);
+}
+
+footer {
+    margin-top: 60px;
+    padding: 10px;
+    background: #cc9900;
+}

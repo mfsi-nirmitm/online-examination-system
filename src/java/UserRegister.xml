@@ -1,0 +1,13 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="register" namespace="/" extends="struts-default">
+        <action name="register" class="Action.UserRegisterAction">
+            <result name="success">/UserLogin.jsp</result>
+            <result name="error">/UserRegistration.jsp</result>
+            <result name="input">/UserRegistration.jsp</result>
+        </action>
+    </package>
+</struts>

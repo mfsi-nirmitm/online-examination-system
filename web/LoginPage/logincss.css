@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 Jun, 2016, 6:18:51 PM
+    Author     : NIKHIL
+*/
+
+body {
+            display: block;
+            width: 74%;
+            margin: 0px auto;
+            background-image: url("/OES/LoginPage/background1.jpg");
+            background-repeat: no-repeat;
+            background-size: 74% 100%;
+            background-position: center;
+        }
+        
+        header {
+            font-size: x-large;
+            display: block;
+            background: linear-gradient(to right bottom,rgba(102,102,255,0),rgba(102,140,255,1));
+            color: black;
+            text-align: center;
+            text-shadow: rgb(110,110,110) 3px 3px 5px;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+        
+        .errors {
+            color: red;
+        }
+        
+        section {
+            margin-top: 70px;
+            display: block;
+            width: 300px;
+            margin-left: 340px;
+            padding: 10px;
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        
+        footer {
+            margin-top: 220px;
+            clear: both;
+            text-align: center;
+            background: coral;
+            padding: 5px;
+        }

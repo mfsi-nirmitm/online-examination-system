@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: nirmit -->
+ 
+<struts>
+    <package name="editprofile" namespace="/" extends="struts-default">
+        <action name="editprofile" class="Action.UserEditProfileAction">
+            <result name="success">/UserEditProfile.jsp</result>
+        </action>
+    </package>
+    <package name="editprofile1" namespace="/" extends="struts-default">
+        <action name="editprofile1" class="Action.UserUpdatedProfileAction">
+            <result name="success">/User.jsp</result>
+            <result name="error">/UserEditProfile.jsp</result>
+            <result name="input">/UserEditProfile.jsp</result>
+        </action>
+    </package>
+
+
+</struts>
